@@ -51,8 +51,7 @@ async function start() {
     await sequelize.authenticate();
     console.log("PostgreSQL ulandi!");
 
-
-    await sequelize.sync({ force: process.env.DB_FORCE_SYNC === "false" });
+    await sequelize.sync({ force: process.env.DB_FORCE_SYNC === "true" });
     console.log("Jadvallar sinxronlandi.");
 
     app.listen(PORT, () => {
